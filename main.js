@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var parser_1 = require("./parser");
+var json_parser = new parser_1.JsonParser();
+var json_doc = json_parser.XMLParseFromFile('./file.txt');
+console.log(json_doc);
+console.log('-'.repeat(20));
+var xml_parser = new parser_1.XMLParser();
+var xml_doc = xml_parser.JsonParseRaw(json_doc);
+console.log(xml_doc);
